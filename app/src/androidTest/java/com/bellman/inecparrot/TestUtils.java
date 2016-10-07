@@ -16,9 +16,6 @@
 
 package com.bellman.inecparrot;
 
-import static android.support.test.InstrumentationRegistry.getInstrumentation;
-import static android.support.test.runner.lifecycle.Stage.RESUMED;
-
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
@@ -30,19 +27,36 @@ import android.support.v7.widget.Toolbar;
 
 import java.util.Collection;
 
+import static android.support.test.InstrumentationRegistry.getInstrumentation;
+import static android.support.test.runner.lifecycle.Stage.RESUMED;
+
 /**
- * Useful test methods common to all activities
+ * Holds Useful test methods common to all activities
  */
 public class TestUtils {
 
+    /**
+     * Rotates the screen configuration to Landscape
+     *
+     * @param activity the Activity to currently occupying the screen
+     */
     private static void rotateToLandscape(Activity activity) {
         activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     }
 
+
+    /**
+     * Rotates the screen configuration to portrait, this is
+     *
+     * @param activity the activity that is currently occupying the scree
+     */
     private static void rotateToPortrait(Activity activity) {
         activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
+    /**
+     * Called to rotate the screen orientation to one of LandScape or portrait
+     */
     public static void rotateOrientation(Activity activity) {
         int currentOrientation = activity.getResources().getConfiguration().orientation;
 
@@ -95,4 +109,6 @@ public class TestUtils {
         });
         return resumedActivity[0];
     }
+
+
 }

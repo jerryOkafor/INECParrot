@@ -1,7 +1,5 @@
 package com.bellman.inecparrot.data.model;
 
-import android.databinding.Observable;
-
 /**
  * Created by Potencio on 10/3/2016.
  * <p>
@@ -20,14 +18,6 @@ import android.databinding.Observable;
  * limitations under the License.
  */
 
-public class PresCandidateModel implements Observable {
-    @Override
-    public void addOnPropertyChangedCallback(OnPropertyChangedCallback callback) {
+public class PresCandidateModel {
 
-    }
-
-    @Override
-    public void removeOnPropertyChangedCallback(OnPropertyChangedCallback callback) {
-
-    }
 }

@@ -59,6 +59,7 @@ public final class SimpleCountingIdlingResource implements IdlingResource {
         return counter.get() == 0;
     }
 
+
     @Override
     public void registerIdleTransitionCallback(ResourceCallback resourceCallback) {
         this.resourceCallback = resourceCallback;

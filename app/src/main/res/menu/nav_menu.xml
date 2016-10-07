@@ -1,4 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+
+    <group android:checkableBehavior="single" android:id="@+id/g1">
+        <item
+            android:id="@+id/action_home"
+            android:checked="false"
+            android:title="@string/home"/>
+        <item
+            android:id="@+id/action_opinion_poll"
+            android:checked="false"
+            android:title="@string/opinion_poll"/>
+    </group>
+
+
+    <group android:checkableBehavior="single" android:id="@+id/g2">
+        <item
+            android:id="@+id/action_gov"
+            android:checked="false"
+            android:title="@string/governorship"/>
+        <item
+            android:id="@+id/action_sen"
+            android:checked="false"
+            android:title="@string/senatorial"/>
+
+        <item
+            android:id="@+id/action_reps"
+            android:checked="false"
+            android:title="@string/house_of_reps"/>
+    </group>
+
+    <group android:checkableBehavior="single" android:id="@+id/g3">
+        <item
+            android:id="@+id/action_settings"
+            android:checked="false"
+            android:title="@string/action_settings"/>
+        <item
+            android:id="@+id/action_about"
+            android:checked="false"
+            android:title="@string/action_about"/>
+        <item
+            android:id="@+id/action_logout"
+            android:checked="false"
+            android:title="@string/action_logout"/>
+    </group>
+    <group android:id="@+id/g4">
+        <item
+            android:icon="@null"
+            android:title="@string/mega_copy"/>
+
+    </group>
 </menu>

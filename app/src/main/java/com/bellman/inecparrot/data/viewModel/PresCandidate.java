@@ -1,5 +1,8 @@
 package com.bellman.inecparrot.data.viewModel;
 
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+
 /**
  * Created by Potencio on 10/3/2016.
  * <p>
@@ -18,5 +21,12 @@ package com.bellman.inecparrot.data.viewModel;
  * limitations under the License.
  */
 
-public class PresCandidate {
+public class PresCandidate extends RecyclerView.ViewHolder {
+
+
+    public PresCandidate(View itemView) {
+        super(itemView);
+//        binding = DataBindingUtil.bind(itemView);
+    }
+
 }

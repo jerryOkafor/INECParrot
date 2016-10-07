@@ -18,5 +18,9 @@ package com.bellman.inecparrot.gov;
  * limitations under the License.
  */
 
-public class GovPresenter {
+public class GovPresenter implements GovContract.Presenter {
+    @Override
+    public void start() {
+
+    }
 }

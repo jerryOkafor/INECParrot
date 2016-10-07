@@ -1,5 +1,9 @@
 package com.bellman.inecparrot.gov;
 
+import com.bellman.inecparrot.BasePresenter;
+import com.bellman.inecparrot.BaseView;
+import com.bellman.inecparrot.home.HomeContract;
+
 /**
  * Created by Potencio on 10/2/2016.
  * <p>
@@ -18,5 +22,13 @@ package com.bellman.inecparrot.gov;
  * limitations under the License.
  */
 
-public class GovContract {
+public interface GovContract {
+    interface View extends BaseView<GovContract.Presenter> {
+
+    }
+
+
+    interface Presenter extends BasePresenter {
+
+    }
 }

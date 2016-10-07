@@ -2,19 +2,26 @@ package com.bellman.inecparrot.home;
 
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.bellman.inecparrot.mock.R;
+import com.bellman.inecparrot.R;
+import com.bellman.inecparrot.data.viewModel.PresCandidate;
+
+import static com.google.common.base.Preconditions.checkNotNull;
+
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements HomeContract.View {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -23,6 +30,7 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private HomeContract.Presenter mPresenter;
 
 
     public HomeFragment() {
@@ -60,7 +68,34 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View rootView =  inflater.inflate(R.layout.fragment_home, container, false);
+        RecyclerView rV = (RecyclerView) rootView.findViewById(R.id.r_scroll);
+        rV.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
+        rV.setAdapter(new RecyclerView.Adapter() {
+            @Override
+            public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+                LayoutInflater lf = LayoutInflater.from(parent.getContext());
+                View view = lf.inflate(R.layout.pres_item,parent,false);
+                return new PresCandidate(view);
+            }
+
+            @Override
+            public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+
+            }
+
+            @Override
+            public int getItemCount() {
+                return 14;
+            }
+        });
+
+        return rootView;
     }
 
+    @Override
+    public void setPresenter(@NonNull HomeContract.Presenter presenter) {
+        mPresenter = checkNotNull(presenter);
+
+    }
 }
